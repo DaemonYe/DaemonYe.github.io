@@ -26,20 +26,20 @@ override: false
 
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
-favicon: 
+favicon:
   # small: /images/favicon-16x16-next.png
   # medium: /images/favicon-32x32-next.png
   # apple_touch_icon: /images/apple-touch-icon-next.png
   # safari_pinned_tab: /images/logo.svg
   small: /images/favicon.ico
   medium: /images/favicon.ico
-  apple_touch_icon: /images/favicon.ico 
+  apple_touch_icon: /images/favicon.ico
   safari_pinned_tab: /images/favicon.ico
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, Daemon Ye"
+keywords: "Daemon Ye"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -116,9 +116,8 @@ menu_icons:
 
 # Schemes
 #scheme: Muse
-#scheme: Mist
+scheme: Mist
 #scheme: Pisces
-scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -152,7 +151,7 @@ links_icon: link
 links_title: Links
 links_layout: block
 #links_layout: inline
-#links:
+#linux的硬链接和软链接:
   #Title: http://example.com/
 
 # Sidebar Avatar
@@ -770,7 +769,7 @@ vendors:
 
   # Internal version: 1.0.2
   # See: https://github.com/HubSpot/pace
-  # Or use direct links below:
+  # Or use direct linux的硬链接和软链接 below:
   # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
   pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js

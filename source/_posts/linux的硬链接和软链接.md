@@ -21,7 +21,7 @@ tags:
 ln sourcefile destfile
 ```
 创建完成后，用ls -i查看文件，就会发现两个文件的inode号是相同的。
-![查看inode号](links/1.png)
+![查看inode号](1.png)
 
 如果使用vim在同一个缓冲区（buffer）中打开这两个文件：
 vim sourcefile
