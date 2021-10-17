@@ -85,19 +85,16 @@
 
 
 
-<meta name="description" content="前言：在linux的世界里，大部分情况下，文件名和inode是一对一的关系，文件一旦被删除，文件相关的inode信息就会被抹掉，文件占用的磁盘空间也会被释放。删了，就没了。 硬链接和软链接技术，让linux世界里的文件和目录具备了副本和替身的能力。 硬链接基于inode技术，linux允许多个文件名同时指向一个inode，好处就是，我们可以用不同的文件名去访问同一个文件，每次操作对文件内容的影响会">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux的硬链接和软链接">
-<meta property="og:url" content="http://yeyangjie.cn/linux的硬链接和软链接/index.html">
+<meta property="og:title" content="photo">
+<meta property="og:url" content="http://yoursite.com/2021/10/17/photo/index.html">
 <meta property="og:site_name" content="DaemonYe个人博客">
-<meta property="og:description" content="前言：在linux的世界里，大部分情况下，文件名和inode是一对一的关系，文件一旦被删除，文件相关的inode信息就会被抹掉，文件占用的磁盘空间也会被释放。删了，就没了。 硬链接和软链接技术，让linux世界里的文件和目录具备了副本和替身的能力。 硬链接基于inode技术，linux允许多个文件名同时指向一个inode，好处就是，我们可以用不同的文件名去访问同一个文件，每次操作对文件内容的影响会">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yeyangjie.cn/.cn//1.png">
-<meta property="og:updated_time" content="2019-07-13T12:49:24.274Z">
+<meta property="og:image" content="http://yoursite.com/.com//photo_01.jpg">
+<meta property="og:updated_time" content="2021-10-17T15:15:20.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux的硬链接和软链接">
-<meta name="twitter:description" content="前言：在linux的世界里，大部分情况下，文件名和inode是一对一的关系，文件一旦被删除，文件相关的inode信息就会被抹掉，文件占用的磁盘空间也会被释放。删了，就没了。 硬链接和软链接技术，让linux世界里的文件和目录具备了副本和替身的能力。 硬链接基于inode技术，linux允许多个文件名同时指向一个inode，好处就是，我们可以用不同的文件名去访问同一个文件，每次操作对文件内容的影响会">
-<meta name="twitter:image" content="http://yeyangjie.cn/.cn//1.png">
+<meta name="twitter:title" content="photo">
+<meta name="twitter:image" content="http://yoursite.com/.com//photo_01.jpg">
 
 
 
@@ -127,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yeyangjie.cn/linux的硬链接和软链接/">
+  <link rel="canonical" href="http://yoursite.com/2021/10/17/photo/">
 
 
 
 
 
-  <title>linux的硬链接和软链接 | DaemonYe个人博客</title>
+  <title>photo | DaemonYe个人博客</title>
   
 
 
@@ -270,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yeyangjie.cn/linux的硬链接和软链接/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/10/17/photo/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Daemon Ye">
@@ -287,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux的硬链接和软链接</h1>
+          <h1 class="post-title" itemprop="name headline">photo</h1>
         
 
         <div class="post-meta">
@@ -299,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-10T08:05:45+08:00">
-                2019-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-10-17T22:38:07+08:00">
+                2021-10-17
               </time>
             
 
@@ -337,26 +334,7 @@
       
 
       
-        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>在linux的世界里，大部分情况下，文件名和inode是一对一的关系，文件一旦被删除，文件相关的inode信息就会被抹掉，文件占用的磁盘空间也会被释放。删了，就没了。</p>
-<p><strong>硬链接</strong>和<strong>软链接</strong>技术，让linux世界里的文件和目录具备了副本和替身的能力。</p>
-<h2 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h2><p>基于inode技术，linux允许多个文件名同时指向一个inode，好处就是，我们可以用不同的文件名去访问同一个文件，每次操作对文件内容的影响会波及到所有「副本」，删除掉一个「副本」，不会影响其他文件。<br>增加一个硬链接文件，仅仅是inode里的「Links」属性值加一，<br>删除一个硬链接文件，「Links」属性值减一。<br>只有「Links」属性值为0时，文件才会被彻底删除，回收其占用的空间。</p>
-<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln sourcefile destfile</span><br></pre></td></tr></table></figure>
-<p>创建完成后，用ls -i查看文件，就会发现两个文件的inode号是相同的。<br><img src="/.cn//1.png" alt="查看inode号"></p>
-<p>如果使用vim在同一个缓冲区（buffer）中打开这两个文件：<br>vim sourcefile<br>:new sourcefile<br>在操作其中一个文件时，会发现另一个窗口是同步联动的。</p>
-<h3 id="应用："><a href="#应用：" class="headerlink" title="应用："></a>应用：</h3><ul>
-<li>多人修改同一个文件</li>
-<li>重要文件备份</li>
-<li>文件更新</li>
-<li>节省磁盘空间</li>
-<li>等。</li>
-</ul>
-<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><ol>
-<li>无法为目录创建硬链接，但是操作系统在每个目录下创建了两个硬链接，一个是「.」，另一个是「..」，使用ls -ai可以看到这两个硬链接目录和inode号，前者代表了当前目录，后者代表了当前目录的父级目录。</li>
-<li>硬链接不创建inode，所以无法跨文件系统，这一点可以由软链接实现。</li>
-</ol>
-<h2 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h2><p>软链接，类似于Windows系统中的快捷方式。<br>软链接会创建新的inode，inode里主要记录了源文件的路径，当访问软链接文件时，系统会帮你自动指向源文件，无论你操作的是源文件，还是软链接文件，其实你最终操作的都是源文件。<br>源文件删除了，软链接文件就成了无本之木，也就毫无意义，强制访问的后果就是「No such file or directory」。</p>
-<h3 id="语法：-1"><a href="#语法：-1" class="headerlink" title="语法："></a>语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s sourcefile destfile</span><br></pre></td></tr></table></figure>
-<p>软链接可以创建目录的软链接，也能跨文件系统存在，在linux系统中被大量使用。一旦源文件/目录不存在了，软链接的使命也就完结了。</p>
+        <p><img src="/.com//photo_01.jpg" alt="弱小无助又可能但是胖的豹豹！"><br></p>
 
       
     </div>
@@ -381,8 +359,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/test/" rel="next" title="test">
-                <i class="fa fa-chevron-left"></i> test
+              <a href="/2019/07/10/linux的硬链接和软链接/" rel="next" title="linux的硬链接和软链接">
+                <i class="fa fa-chevron-left"></i> linux的硬链接和软链接
               </a>
             
           </div>
@@ -390,10 +368,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/photo/" rel="prev" title="photo">
-                photo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,17 +419,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -524,22 +489,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬链接"><span class="nav-number">2.</span> <span class="nav-text">硬链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法："><span class="nav-number">2.1.</span> <span class="nav-text">语法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用："><span class="nav-number">2.2.</span> <span class="nav-text">应用：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意："><span class="nav-number">2.2.1.</span> <span class="nav-text">注意：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软链接"><span class="nav-number">3.</span> <span class="nav-text">软链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法：-1"><span class="nav-number">3.1.</span> <span class="nav-text">语法：</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
