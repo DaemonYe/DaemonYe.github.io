@@ -3,6 +3,7 @@ title: linux的硬链接和软链接
 date: 2019-07-10 08:05:45
 categories:
 tags:
+copyright: true #新增,开启
 ---
 
 ## 前言：
