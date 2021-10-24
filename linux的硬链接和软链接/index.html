@@ -93,7 +93,7 @@
 <meta property="og:description" content="前言：在linux的世界里，大部分情况下，文件名和inode是一对一的关系，文件一旦被删除，文件相关的inode信息就会被抹掉，文件占用的磁盘空间也会被释放。删了，就没了。 硬链接和软链接技术，让linux世界里的文件和目录具备了副本和替身的能力。 硬链接基于inode技术，linux允许多个文件名同时指向一个inode，好处就是，我们可以用不同的文件名去访问同一个文件，每次操作对文件内容的影响会">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yeyangjie.cn/linux的硬链接和软链接/1.png">
-<meta property="og:updated_time" content="2021-10-17T16:04:20.335Z">
+<meta property="og:updated_time" content="2021-10-24T14:55:05.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux的硬链接和软链接">
 <meta name="twitter:description" content="前言：在linux的世界里，大部分情况下，文件名和inode是一对一的关系，文件一旦被删除，文件相关的inode信息就会被抹掉，文件占用的磁盘空间也会被释放。删了，就没了。 硬链接和软链接技术，让linux世界里的文件和目录具备了副本和替身的能力。 硬链接基于inode技术，linux允许多个文件名同时指向一个inode，好处就是，我们可以用不同的文件名去访问同一个文件，每次操作对文件内容的影响会">
@@ -107,7 +107,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -154,7 +154,7 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
+    <a href="https://github.com/DaemonYe/DaemonYe.github.io"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -321,6 +321,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  643
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -364,10 +395,67 @@
     
     
 
-    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>linux的硬链接和软链接</p>
+  <p><span>文章作者:</span>Daemon Ye</p>
+  <p><span>发布时间:</span>2019年07月10日 - 08:05:45</p>
+  <p><span>最后更新:</span>2021年10月24日 - 22:55:05</p>
+  <p><span>原始链接:</span><a href="/linux的硬链接和软链接/" title="linux的硬链接和软链接">http://yeyangjie.cn/linux的硬链接和软链接/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yeyangjie.cn/linux的硬链接和软链接/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+
+
+      
+    </div>
 
     
 
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Daemon Ye
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yeyangjie.cn/linux的硬链接和软链接/" title="linux的硬链接和软链接">http://yeyangjie.cn/linux的硬链接和软链接/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -564,6 +652,15 @@
   <span class="author" itemprop="copyrightHolder">Daemon Ye</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">723</span>
+  
 </div>
 
 
@@ -589,6 +686,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
